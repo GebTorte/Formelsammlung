@@ -65,7 +65,7 @@ export PATH="$PATH:/usr/bin/R"
 
 ## QGIS
 ### custom venv
-## install
+#### install
 
 // use system python version!!!
 //> uv python pin 3.14 (use sytem )
@@ -81,12 +81,12 @@ export PATH="$PATH:/usr/bin/R"
 > uv add geopandas pyproj shapely
 > uv add remotior-sensus
 
-### set system site packages
+##### set system site packages
 toggle flat in .venv/pyvenv.cfg to true:
 include-system-site-packages = true
 
 // NOTE:
 
-## Launch qgis from this python venv to enable SCP (semi-automatic classification plugin) toolkit
+### Launch qgis from this python venv to enable SCP (semi-automatic classification plugin) toolkit
 > source .venv/bin/activate
 > qgis
