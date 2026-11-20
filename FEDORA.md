@@ -65,7 +65,13 @@ export PATH="$PATH:/usr/bin/R"
 
 ## QGIS
 ### custom venv
-#### install
+#### install correct
+> uv venv // use system python version (qgis is built against this!)
+> uv add scipy scikit-learn geopandas pyproj shapely remotior-sensus
+https://pytorch.org/get-started/previous-versions/
+> uv add torch==2.13.0 torchvision==0.28.0 --index https://download.pytorch.org/whl/rocm7.1
+
+#### install old
 
 // use system python version!!!
 //> uv python pin 3.14 (use sytem )
@@ -81,12 +87,12 @@ export PATH="$PATH:/usr/bin/R"
 > uv add geopandas pyproj shapely
 > uv add remotior-sensus
 
-##### set system site packages
+#### set system site packages
 toggle flat in .venv/pyvenv.cfg to true:
 include-system-site-packages = true
 
 // NOTE:
 
-### Launch qgis from this python venv to enable SCP (semi-automatic classification plugin) toolkit
+#### Launch qgis from this python venv to enable SCP (semi-automatic classification plugin) toolkit
 > source .venv/bin/activate
 > qgis
