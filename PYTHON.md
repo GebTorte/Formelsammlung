@@ -12,4 +12,14 @@ with np.errstate(divide="ignore", invalid="ignore"):
     ndvi = np.true_divide((nir-red), (nir+red))
     ndvi[ndvi == np.inf] = 0
     ndvi = np.nan_to_num(ndvi) 
+
+
+import xarray as xr
+denominator = red + nir
+ndvi = xr.where(
+    denominator!=0,
+    (nir-red) / denominator,
+    np.nan,
+)
+
 ```
